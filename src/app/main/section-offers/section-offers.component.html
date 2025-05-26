@@ -1,15 +1,18 @@
 <section class="cities">
+  @if (offers().length === 0) {
+  <app-main-empty />
+  } @else {
   <div class="cities__places-container container">
     <section class="cities__places places">
       <h2 class="visually-hidden">Places</h2>
-      <b class="places__found">312 places to stay in Amsterdam</b>
-       <app-places-sorting></app-places-sorting>
-      <app-offers-list></app-offers-list>
+      <b class="places__found">{{ offers().length }} places to stay in {{ selectedCity() }}</b>
+      <app-places-sorting></app-places-sorting>
+      <app-offers-list [offers]="offers()"></app-offers-list>
     </section>
 
     <div class="cities__right-section">
-              <section class="cities__map map"></section>
-            </div>
+      <section class="cities__map map"></section>
+    </div>
   </div>
-
+  }
 </section>

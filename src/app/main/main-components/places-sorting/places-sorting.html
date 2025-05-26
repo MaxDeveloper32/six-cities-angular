@@ -1,4 +1,3 @@
-
 <form class="places__sorting" action="#" method="get">
                 <span class="places__sorting-caption">Sort by</span>
                 <span
@@ -7,7 +6,7 @@
                   (click)="isOpen = !isOpen"
                   (keydown.enter)="isOpen = !isOpen"
                  >
-                  {{selectedOption()}}
+                  {{selectedSortType()}}
                   <svg class="places__sorting-arrow" width="7" height="4">
                     <use xlink:href="#icon-arrow-select"></use>
                   </svg>
@@ -19,7 +18,7 @@
                   @for (option of options; track option) {
                        <li
                          class="places__option"
-                         [class.places__option--active]="option === selectedOption()"
+                         [class.places__option--active]="option === selectedSortType()"
                          tabindex="0"
                          (click)="selectOption(option)"
                          (keydown.enter)="selectOption(option)"

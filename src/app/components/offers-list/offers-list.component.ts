@@ -1,9 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 import { TypePlace } from '../../types/offers';
 import { CommonModule } from '@angular/common';
-import { mockOffers } from '../../mock-offers';
-
-
+//import { mockOffers } from '../../mock-offers';
 
 @Component({
   selector: 'app-offers-list',
@@ -13,8 +11,6 @@ import { mockOffers } from '../../mock-offers';
 })
 
 export class OffersListComponent {
-  offers:TypePlace[] = mockOffers;
+  @Input() offers:TypePlace[] = [];
 }
 
-
-/* ng generate component components/offers-list */

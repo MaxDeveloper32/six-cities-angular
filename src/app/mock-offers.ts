@@ -28,7 +28,7 @@ export const mockOffers = [
 "type": "apartment",
 "price": 220,
 "city": {
-"name": "Amsterdam",
+"name": "Hamburg",
 "location": {
 "latitude": 52.35514938496378,
 "longitude": 4.673877537499948,
