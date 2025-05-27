@@ -9,13 +9,14 @@ import { selectProcessedOffers } from '../../store/selectors/offers.selectors';
 
 @Component({
   selector: 'app-section-offers',
-  imports: [OffersListComponent, PlacesSortingComponent, MainEmptyComponent],
+  imports: [OffersListComponent,  PlacesSortingComponent, MainEmptyComponent],
   templateUrl: './section-offers.component.html',
   styleUrl: './section-offers.component.css'
 })
 
 export class SectionOffersComponent {
   private store = inject(Store);
+  f = this.store.select(selectProcessedOffers).subscribe(() => console.log('Selector emitted new value'));
   selectedCity = toSignal(this.store.select(offersFeature.selectCity));
   @Input() offers = toSignal(this.store.select(selectProcessedOffers), { initialValue: [] });
 }

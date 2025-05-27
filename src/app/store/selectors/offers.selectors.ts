@@ -7,7 +7,9 @@ export const selectProcessedOffers = createSelector(
   offersFeature.selectCity,
   offersFeature.selectSortType,
   (offers, city, sort) => {
-     const filteredOffers = filtersOffers(offers, city);
-     return sortingOffers(filteredOffers, sort);
+    console.log(11111);
+
+    const filteredOffers = filtersOffers(offers, city);
+    return sortingOffers(filteredOffers, sort);
   }
 );

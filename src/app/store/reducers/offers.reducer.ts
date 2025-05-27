@@ -1,10 +1,10 @@
-import { createReducer, on , createFeature, } from '@ngrx/store';
+import { createReducer, on, createFeature } from '@ngrx/store';
 import { setCity, setSortType } from '../actions/offers.actions';
 import { TypePlace } from '../../types/offers';
 import { mockOffers } from '../../mock-offers';
 
 const CURRENT_CITY = 'Amsterdam';
-const SORT_TYPE = 'Popular'
+const SORT_TYPE = 'Popular';
 
 export interface OffersState {
   city: string;
@@ -15,7 +15,7 @@ export interface OffersState {
 const initialState: OffersState = {
   city: CURRENT_CITY,
   sortType: SORT_TYPE,
-  offers: mockOffers
+  offers: mockOffers,
 };
 
 export const offersFeature = createFeature({
@@ -23,7 +23,6 @@ export const offersFeature = createFeature({
   reducer: createReducer(
     initialState,
     on(setCity, (state, { city }) => ({ ...state, city })),
-    on(setSortType, (state, { sortType }) => ({ ...state, sortType })),
+    on(setSortType, (state, { sortType }) => ({ ...state, sortType }))
   ),
 });
-

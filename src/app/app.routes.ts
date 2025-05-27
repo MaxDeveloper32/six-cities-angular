@@ -6,6 +6,6 @@ import { LoginComponent } from './components/login/login.component';
 export const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
-  { path: "404", component: NotFoundComponent },
+  { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },
 ];
