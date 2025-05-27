@@ -5,7 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { offersFeature } from '../../store/reducers/offers.reducer';
 import { Store } from '@ngrx/store';
 import { MainEmptyComponent } from '../main-empty/main-empty.component';
-import { sex } from '../../store/selectors/offers.selectors';
+import { selectProcessedOffers } from '../../store/selectors/offers.selectors';
 
 @Component({
   selector: 'app-section-offers',
@@ -17,5 +17,5 @@ import { sex } from '../../store/selectors/offers.selectors';
 export class SectionOffersComponent {
   private store = inject(Store);
   selectedCity = toSignal(this.store.select(offersFeature.selectCity));
-  @Input() offers = toSignal(this.store.select(sex), { initialValue: [] });
+  @Input() offers = toSignal(this.store.select(selectProcessedOffers), { initialValue: [] });
 }

@@ -2,7 +2,7 @@ import { createSelector } from '@ngrx/store';
 import { offersFeature } from '../reducers/offers.reducer';
 import { filtersOffers, sortingOffers } from '../../utils/filter-sort-offers';
 
-export const sex = createSelector(
+export const selectProcessedOffers = createSelector(
   offersFeature.selectOffers,
   offersFeature.selectCity,
   offersFeature.selectSortType,
