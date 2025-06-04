@@ -10,12 +10,14 @@ export interface OffersState {
   city: string;
   sortType: string;
   offers: TypePlace[];
+  isLoggedIn: boolean;
 }
 
 const initialState: OffersState = {
   city: CURRENT_CITY,
   sortType: SORT_TYPE,
   offers: mockOffers,
+  isLoggedIn: false,
 };
 
 export const offersFeature = createFeature({
