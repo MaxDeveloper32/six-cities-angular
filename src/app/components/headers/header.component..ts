@@ -3,6 +3,8 @@ import { NavigationEnd, Router, RouterLink, RouterModule } from '@angular/router
 import { filter } from 'rxjs';
 import { UserInfoComponent } from './user-info/user-info.component';
 
+const HIDDEN_NAV_PATHS = new Set(['/login', '/404']);
+
 @Component({
   selector: 'app-header',
   imports: [RouterLink, RouterModule, UserInfoComponent],
@@ -11,12 +13,10 @@ import { UserInfoComponent } from './user-info/user-info.component';
 export class HeaderComponent implements OnInit {
   router = inject(Router);
   isHiddenNav = false;
-  hiddenRoutes = ['/login', '/404'];
 
   ngOnInit() {
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
-      const url = this.router.url;
-      this.isHiddenNav = ['/login', '/404'].includes(url);
+      this.isHiddenNav = HIDDEN_NAV_PATHS.has(this.router.url);
     });
   }
 
