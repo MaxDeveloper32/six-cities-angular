@@ -1,0 +1,22 @@
+<ul class="header__nav-list">
+  @if (isLoggedIn()) {
+    <li class="header__nav-item user">
+      <a class="header__nav-link header__nav-link--profile" routerLink="/favorites">
+        <div class="header__avatar-wrapper user__avatar-wrapper"></div>
+        <span class="header__user-name user__name">Oliver.conner</span>
+        <span class="header__favorite-count">3</span>
+      </a>
+
+      <button class="header__nav-link">
+        <span class="header__signout">Sign out</span>
+      </button>
+    </li>
+  } @else {
+    <li class="header__nav-item user">
+      <a class="header__nav-link header__nav-link--profile" routerLink="/login">
+        <div class="header__avatar-wrapper user__avatar-wrapper"></div>
+        <span class="header__login">Sign in</span>
+      </a>
+    </li>
+  }
+</ul>
